@@ -11,5 +11,12 @@ namespace Repositories
     {
         List<Employee> GetAllEmployees();
         List<Employee> GetEmployeesManage(int id);
+        string? GetEmployeeName(int id);
+
+        Employee? GetEmployeeById(int id);
+
+        void UpdateEmployee(Employee employee);
+        void DeleteEmployee(int employeeID);
+        void InsertEmployee(Employee employee);
     }
 }

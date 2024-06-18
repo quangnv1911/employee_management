@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repositories.Impl
 {
-    public class EmployeeRepo : IEmployeeRepo
+    public class EmployeedRepo : IEmployeeRepo
     {
         public List<Employee> GetAllEmployees()
         {
@@ -18,6 +18,31 @@ namespace Repositories.Impl
         public List<Employee> GetEmployeesManage(int id)
         {
             return EmployeeDAO.GetEmployeesManage(id);
+        }
+
+        public string? GetEmployeeName(int id)
+        {
+            return EmployeeDAO.GetEmployeeName(id);
+        }
+
+        public Employee? GetEmployeeById(int id)
+        {
+            return EmployeeDAO.GetEmployeeById(id);
+        }
+
+        public void UpdateEmployee(Employee employee)
+        {
+            EmployeeDAO.UpdateEmployee(employee);
+        }
+
+        public void DeleteEmployee(int employeeID)
+        {
+            EmployeeDAO.DeleteEmployee(employeeID);
+        }
+
+        public void InsertEmployee(Employee employee)
+        {
+            EmployeeDAO.InsertEmployee(employee);
         }
     }
 }

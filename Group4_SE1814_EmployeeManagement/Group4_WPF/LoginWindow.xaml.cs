@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BusinessObjects;
+using System.Security.Principal;
 
 namespace Group4_WPF
 {
@@ -37,7 +38,20 @@ namespace Group4_WPF
             if (accountMember != null)
             {
                 MainWindow mainWindow = new MainWindow();
-                mainWindow.hiddenUserName.Content = accountMember.Email;
+
+                // Lấy tên người dùng. Nếu người dùng là admin thì tự động đổi thành admin
+                string userId;
+                if (accountMember.EmployeeId == null)
+                {
+                    userId = "admin";
+                }
+                else
+                {
+                    userId = accountMember.EmployeeId.ToString();
+                }
+                Thread.CurrentPrincipal = new GenericPrincipal(
+                    new GenericIdentity(userId), [accountMember.Role]);
+
                 mainWindow.Show();
                 this.Close();
             }

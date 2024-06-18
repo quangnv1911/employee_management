@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\icons8_employee_card_100px.png" />
+    <None Remove="Assets\icons8_logout_rounded_up_filled_25px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
@@ -17,6 +22,15 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\icons8_employee_card_100px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\icons8_logout_rounded_up_filled_25px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

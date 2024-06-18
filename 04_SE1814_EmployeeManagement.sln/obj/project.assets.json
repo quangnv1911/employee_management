@@ -4509,11 +4509,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj",
+      "projectUniqueName": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj",
       "projectName": "04_SE1814_EmployeeManagement.sln",
-      "projectPath": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj",
+      "projectPath": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj",
       "packagesPath": "C:\\Users\\quang\\.nuget\\packages\\",
-      "outputPath": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\obj\\",
+      "outputPath": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\quang\\AppData\\Roaming\\NuGet\\NuGet.Config",

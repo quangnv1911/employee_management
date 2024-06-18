@@ -53,7 +53,7 @@ namespace _04_SE1814_EmployeeManagement.sln {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/04_SE1814_EmployeeManagement.sln;component/wpfapp/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/04_SE1814_EmployeeManagement.sln;V1.0.0.0;component/wpfapp/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\WPFApp\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj": {}
+    "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\BusinessObjects\\BusinessObjects.csproj": {}
   },
   "projects": {
-    "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj": {
+    "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj",
-        "projectName": "04_SE1814_EmployeeManagement.sln",
-        "projectPath": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\04_SE1814_EmployeeManagement.sln.csproj",
+        "projectUniqueName": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\BusinessObjects\\BusinessObjects.csproj",
+        "projectName": "BusinessObjects",
+        "projectPath": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\BusinessObjects\\BusinessObjects.csproj",
         "packagesPath": "C:\\Users\\quang\\.nuget\\packages\\",
-        "outputPath": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\obj\\",
+        "outputPath": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\quang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0-windows"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0-windows7.0": {
-            "targetAlias": "net8.0-windows",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -42,26 +42,12 @@
         }
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.6, )"
-            },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.6, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
-              "target": "Package",
-              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -78,9 +64,6 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"

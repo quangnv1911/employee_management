@@ -1,40 +1,52 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\",
+  "WorkspaceRootPath": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{1B0FD460-C100-476A-82B7-C96902AE1892}|..\\Services\\Services.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\services\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD6AA06A-BB62-4C63-A08E-A1E582B9A80A}|..\\DataAccessLayer\\DataAccessLayer.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\dataaccesslayer\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED1F307-15A0-43CA-AC81-8821ED7AFF71}|..\\BusinessObjects\\BusinessObjects.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\businessobjects\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54B74DF-4E1F-4CDE-8D11-2E8653146FB8}|..\\Repositories\\Repositories.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\repositories\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\wpfapp\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\wpfapp\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:wpfapp\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\quang\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\dataaccesslayer\\employeedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\dataaccesslayer\\employeedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:dataaccesslayer\\employeedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\services\\impl\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\services\\impl\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:services\\impl\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\repositories\\impl\\employeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\repositories\\impl\\employeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:repositories\\impl\\employeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\repositories\\iemployeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\repositories\\iemployeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:repositories\\iemployeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn221\\project\\employee_management\\04_se1814_employeemanagement.sln\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|e:\\learning\\fpt\\prn211\\project\\employee_management\\04_se1814_employeemanagement.sln\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CCB38A2-EE27-4301-BC65-FF28006514E9}|04_SE1814_EmployeeManagement.sln.csproj|solutionrelative:services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -45,7 +57,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 54,
+          "SelectedChildIndex": 52,
           "Children": [
             {
               "$type": "Bookmark",
@@ -229,19 +241,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
@@ -261,15 +265,67 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "Name": "ST:2:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\Services\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\Services\\Class1.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\Services\\Class1.cs",
+              "RelativeToolTip": "..\\Services\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T02:20:31.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\DataAccessLayer\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Class1.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\DataAccessLayer\\Class1.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T02:20:09.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\BusinessObjects\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\BusinessObjects\\Class1.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\BusinessObjects\\Class1.cs",
+              "RelativeToolTip": "..\\BusinessObjects\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T02:19:49.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\Repositories\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\Repositories\\Class1.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\Repositories\\Class1.cs",
+              "RelativeToolTip": "..\\Repositories\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T02:18:31.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\MainWindow.xaml",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\MainWindow.xaml",
               "RelativeDocumentMoniker": "WPFApp\\MainWindow.xaml",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\MainWindow.xaml",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\MainWindow.xaml",
               "RelativeToolTip": "WPFApp\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-06-10T14:40:41.29Z",
@@ -277,11 +333,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\AssemblyInfo.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "WPFApp\\AssemblyInfo.cs",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\AssemblyInfo.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\WPFApp\\AssemblyInfo.cs",
               "RelativeToolTip": "WPFApp\\AssemblyInfo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -290,22 +346,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ResourcePart.cs",
               "DocumentMoniker": "C:\\Users\\quang\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs",
-              "ToolTip": "C:\\Users\\quang\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs [Read Only]",
+              "ToolTip": "C:\\Users\\quang\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAADgvycAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-10T14:39:52.566Z",
-              "EditorCaption": " [Read Only]"
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "App.xaml",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\App.xaml",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\App.xaml",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-06-10T14:39:06.756Z",
@@ -313,11 +369,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "EmployeeDAO.cs",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\DataAccessLayer\\EmployeeDAO.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\DataAccessLayer\\EmployeeDAO.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\EmployeeDAO.cs",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\DataAccessLayer\\EmployeeDAO.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\DataAccessLayer\\EmployeeDAO.cs",
               "RelativeToolTip": "DataAccessLayer\\EmployeeDAO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -326,11 +382,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "EmployeeRepo.cs",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\Impl\\EmployeeRepo.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\Impl\\EmployeeRepo.cs",
               "RelativeDocumentMoniker": "Repositories\\Impl\\EmployeeRepo.cs",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\Impl\\EmployeeRepo.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\Impl\\EmployeeRepo.cs",
               "RelativeToolTip": "Repositories\\Impl\\EmployeeRepo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -339,11 +395,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "EmployeeService.cs",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\Impl\\EmployeeService.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\Impl\\EmployeeService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\EmployeeService.cs",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\Impl\\EmployeeService.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\Impl\\EmployeeService.cs",
               "RelativeToolTip": "Services\\Impl\\EmployeeService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -352,27 +408,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "IEmployeeRepo.cs",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\IEmployeeRepo.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\IEmployeeRepo.cs",
               "RelativeDocumentMoniker": "Repositories\\IEmployeeRepo.cs",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\IEmployeeRepo.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Repositories\\IEmployeeRepo.cs",
               "RelativeToolTip": "Repositories\\IEmployeeRepo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T08:04:45.305Z"
+              "WhenOpened": "2024-06-10T08:04:45.305Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "IEmployeeService.cs",
-              "DocumentMoniker": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\IEmployeeService.cs",
+              "DocumentMoniker": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\IEmployeeService.cs",
               "RelativeDocumentMoniker": "Services\\IEmployeeService.cs",
-              "ToolTip": "E:\\Learning\\FPT\\PRN221\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\IEmployeeService.cs",
+              "ToolTip": "E:\\Learning\\FPT\\PRN211\\Project\\employee_management\\04_SE1814_EmployeeManagement.sln\\Services\\IEmployeeService.cs",
               "RelativeToolTip": "Services\\IEmployeeService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T08:04:58.582Z"
+              "WhenOpened": "2024-06-10T08:04:58.582Z",
+              "EditorCaption": ""
             }
           ]
         },

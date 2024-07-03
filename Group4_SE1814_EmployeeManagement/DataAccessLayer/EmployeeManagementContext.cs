@@ -37,7 +37,10 @@ public partial class EmployeeManagementContext : DbContext
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
         IConfiguration configuration = builder.Build();
-        optionsBuilder.UseSqlServer(configuration.GetConnectionString("Cnn"));
+        optionsBuilder
+            .UseSqlServer(configuration.GetConnectionString("Cnn"))
+            .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
+            .EnableSensitiveDataLogging();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

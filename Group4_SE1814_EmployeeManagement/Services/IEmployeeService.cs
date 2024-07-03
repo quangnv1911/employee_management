@@ -16,5 +16,11 @@ namespace Services
         void UpdateEmployee(Employee employeeID);
         void DeleteEmployee(int employeeID);
         void InsertEmployee(Employee employee);
+        List<Employee> FilterEmployee(string? name, string? email, string? phone, string? salary, string? department, string? job, string? sortBy, string? sortOrder);
+        Task ExportExcel(string? name, string? email, string? phone, string? salary, string? department, string? job, string? sortBy, string? sortOrder);
+        List<Employee> FilterListByRole(string role, List<Employee> employees);
+        void InsertListEmployee(List<Employee> employees);
+        void ImportExcelFile(string filePath);
+        int CountTotalEmployee();
     }
 }

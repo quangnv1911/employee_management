@@ -44,5 +44,20 @@ namespace Repositories.Impl
         {
             EmployeeDAO.InsertEmployee(employee);
         }
+
+        public async void InsertListEmployee(List<Employee> employees)
+        {
+            await EmployeeDAO.InsertListEmployee(employees);
+        }
+
+        public void ClearTracking(Employee employee)
+        {
+            EmployeeDAO.ClearTracking(employee);
+        }
+
+        public int CountTotalEmployee()
+        {
+            return EmployeeDAO.CountTotalEmployee();
+        }
     }
 }

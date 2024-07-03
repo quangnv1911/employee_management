@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group4_WPF"
+        xmlns:control="clr-namespace:Group4_WPF.Control"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="Employee Management System" Height="600" Width="1200">
+        Title="Employee Management System" Height="700" Width="1500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -22,7 +23,14 @@
         </Grid.RowDefinitions>
 
         <!-- Thanh navbar bên trái -->
-        <Grid Grid.Column="0" Grid.RowSpan="2" Background="LightGray">
+
+        <Grid Grid.Column="0" Grid.RowSpan="2">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#272b3f" Offset="0"/>
+                    <GradientStop Color="#256b51" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <!-- Dòng chứa các thành phần chính -->
@@ -33,124 +41,66 @@
             <!-- Các thành phần chính -->
             <StackPanel Grid.Row="0">
                 <Image Height="100" Width="100" Source="Assets\icons8_employee_card_100px.png"
-                Margin="0 20" Name="imgUserPicture"/>
-                <Label Name="lbUserName" Content="Welcome, UserName" HorizontalContentAlignment="Center"/>
-                <Button Content="Home" Margin="10"/>
-                <Button Content="Settings" Margin="10"/>
-                <Button Content="About" Margin="10"/>
+               Margin="0 20" Name="imgUserPicture"/>
+                <Label Name="lbUserName" Content="Welcome, UserName" HorizontalContentAlignment="Center" Foreground="White"/>
+
+                <!-- <ListBox x:Name="nvListView" 
+                 SelectionChanged="nvListView_SelectionChanged"
+                 BorderThickness="0"
+                 Background="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="FontSize" Value="16"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBoxItem Content="Employee" Tag="Employee"/>
+                    <ListBoxItem Content="Job" Tag="Job"/>
+                    <ListBoxItem Content="Department" Tag="Department"/>
+                </ListBox>
+                -->
+                <Button Content="Home" x:Name="btnHomeClick"
+                                                BorderBrush="{x:Null}" Background="{x:Null}"
+Foreground="White" Padding="20 0 20 0" Height="74" Cursor="Hand" Click="btnHomeClick_Click"
+>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Opacity" Value="1"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="0.8"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Content="Employee" x:Name="btnEmployeeClick"
+                        BorderBrush="{x:Null}" Background="{x:Null}"
+Foreground="White" Click="btnEmployeeClick_Click" Height="67"/>
+                <Button Content="Job" x:Name="btnJobClick"
+                        BorderBrush="{x:Null}" Background="{x:Null}"
+Foreground="White" Height="52" Click="btnJobClick_Click"/>
+                <Button Content="Department" x:Name="btnDepartmentClick"
+                        BorderBrush="{x:Null}" Background="{x:Null}"
+                        Foreground="White" Height="58" Click="btnDepartmentClick_Click"/>
             </StackPanel>
 
             <!-- Nút Logout và label "Last Login" -->
             <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="10">
-                <Label Content="Last Login: MM/dd/yyyy" HorizontalAlignment="Center"/>
+                <Label x:Name="lbLastLogin" Content="Last Login: MM/dd/yyyy" HorizontalAlignment="Center" Foreground="White"/>
                 <Image Source="Assets\icons8_logout_rounded_up_filled_25px.png" Height="20"
-                   MouseLeftButtonUp="ImgLogout_MouseLeftButtonUp" RenderTransformOrigin="0.944,0.5"    />
-
+               MouseLeftButtonUp="ImgLogout_MouseLeftButtonUp" RenderTransformOrigin="0.944,0.5"/>
             </StackPanel>
         </Grid>
 
 
+
         <!-- DataGrid ở nửa trên bên phải -->
         <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="7*"/>
-                <!-- DataGrid -->
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <DataGrid x:Name="dgEmployeeData" Grid.Row="0" Margin="10"
-                  SelectionChanged="dgEmployeeData_SelectionChanged" 
-                  AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding EmployeeId}" Width="50"/>
-                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" Width="100"/>
-                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" Width="100"/>
-                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
-                    <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="100"/>
-                    <DataGridTextColumn Header="Hire Date" Binding="{Binding HireDate, StringFormat={}{0:MM/dd/yyyy}}" Width="100"/>
-                    <DataGridTextColumn Header="Job" Binding="{Binding Job.JobTitle}" Width="150"/>
-                    <DataGridTextColumn Header="Salary" Binding="{Binding Salary}" Width="100"/>
-                    <DataGridTextColumn Header="Commission" Binding="{Binding CommissionPct}" Width="100"/>
-                    <DataGridTextColumn Header="Manager Name" Binding="{Binding Manager.FirstName}" Width="100"/>
-                    <DataGridTextColumn Header="Department Name" Binding="{Binding Department.DepartmentName}" Width="100"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <!-- Bạn có thể thêm các cột và hàng vào DataGrid tại đây -->
 
-
-            <!-- Danh sách label và input ở nửa dưới bên phải -->
-            <Grid Grid.Row="1" Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <!-- Cột cho nhãn Label bên trái -->
-                    <ColumnDefinition Width="*"/>
-                    <!-- Cột cho TextBox bên trái -->
-                    <ColumnDefinition Width="Auto"/>
-                    <!-- Cột trống để tách biệt giữa hai nhóm -->
-                    <ColumnDefinition Width="Auto"/>
-                    <!-- Cột cho nhãn Label bên phải -->
-                    <ColumnDefinition Width="*"/>
-                    <!-- Cột cho TextBox bên phải -->
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <!-- Các thành phần bên trái -->
-                <Label Grid.Row="0" Grid.Column="0" Content="EmployeeID" Name="lbEmployeeID"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Name="tbEmployeeID" TextChanged="tbEmployeeID_TextChanged"/>
-
-                <Label Grid.Row="1" Grid.Column="0" Name="lbEmployeeFirstName" Content="First Name"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbEmployeeFirstName" TextChanged="tbEmployeeFirstName_TextChanged"/>
-
-                <Label Grid.Row="2" Grid.Column="0" Name="lbEmployeeLastName" Content="Last Name"/>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="tbEmployeeLastName" TextChanged="tbEmployeeLastName_TextChanged"/>
-
-                <Label Grid.Row="3" Grid.Column="0" Name="lbEmployeeEmail" Content="Email"/>
-                <TextBox Grid.Row="3" Grid.Column="1" x:Name="tbEmployeeEmail" TextChanged="tbEmployeeEmail_TextChanged"/>
-
-                <Label Grid.Row="4" Grid.Column="0" Name="lbEmployeePhone" Content="Phone"/>
-                <TextBox Grid.Row="4" Grid.Column="1" x:Name="tbEmployeePhone" TextChanged="tbEmployeePhone_TextChanged"/>
-
-                <Label Grid.Row="5" Grid.Column="0" Name="lbEmployeeHire" Content="Hire Date"/>
-                <DatePicker Grid.Row="5" Name="dpEmployeeHire" Grid.ColumnSpan="2" Height="35" Margin="73,0,0,0" VerticalAlignment="Bottom"
-                            DataContextChanged="dpEmployeeHire_DataContextChanged"/>
-
-                <!-- Các thành phần bên phải -->
-                <Label Grid.Row="0" Grid.Column="3" Name="lbEmployeeJob" Content="Job"/>
-                <TextBox Grid.Row="0" Grid.Column="4" x:Name="tbEmployeeJob" TextChanged="tbEmployeeJob_TextChanged"/>
-
-                <Label Grid.Row="1" Grid.Column="3" Name="lbSalary" Content="Salary"/>
-                <TextBox Grid.Row="1" Grid.Column="4" x:Name="tbSalary" TextChanged="tbSalary_TextChanged"/>
-
-                <Label Grid.Row="2" Grid.Column="3" Name="lbCommiPct" Content="Commission PCT"/>
-                <TextBox Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" x:Name="tbComiPct" TextChanged="tbComiPct_TextChanged"/>
-
-                <Label Grid.Row="3" Grid.Column="3" Name="lbManager" Content="Manager"/>
-                <ComboBox Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" x:Name="cbManager" SelectedValuePath="Content" />
-
-                <Label Grid.Row="4" Grid.Column="3" Name="lbDepartment" Content="Department"/>
-                <TextBox Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" x:Name="tbDepartment" TextChanged="tbDepartment_TextChanged"/>
-            </Grid>
-            <Grid Grid.Row="2" Margin="10" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Button Grid.Column="0" Content="ADD" Margin="5" Name="btnAddEmployee" Click="btnAddEmployee_Click"/>
-                <Button Grid.Column="1" Content="UPDATE" Margin="0,5,5,5" Name="btnUpdateEmployee" Click="btnUpdateEmployee_Click" HorizontalAlignment="Right" Width="46"/>
-                <Button Grid.Column="2" Content="DELETE" Margin="5" Name="btnDeleteEmployee" Click="btnDeleteEmployee_Click"/>
-                <Button Grid.Column="3" Content="CLEAR" Margin="5" Name="btnClear" Click="btnClear_Click"/>
-            </Grid>
+            <ContentControl x:Name="ccDisplayContent" Content=""/>
         </Grid>
 
 

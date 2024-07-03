@@ -18,5 +18,8 @@ namespace Repositories
         void UpdateEmployee(Employee employee);
         void DeleteEmployee(int employeeID);
         void InsertEmployee(Employee employee);
+        void InsertListEmployee(List<Employee> employees);
+        void ClearTracking(Employee employee);
+        int CountTotalEmployee();
     }
 }

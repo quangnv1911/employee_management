@@ -15,9 +15,10 @@ namespace DataAccessLayer
         {
             EmployeeManagementContext context = new EmployeeManagementContext();
 
-           return context.Employees.Where(e => e.ManagerId == employeeID)
-                .Include(e => e.Job).Include(e => e.Manager).Include(e => e.Department)
-                .ToList();
+            return context.Employees.Where(e => e.ManagerId == employeeID)
+                 .Include(e => e.Job).Include(e => e.Manager).Include(e => e.Department)
+                 .AsNoTracking()
+                 .ToList();
         }
 
         public static List<Employee> GetEmployees()
@@ -26,13 +27,14 @@ namespace DataAccessLayer
 
             return context.Employees
                 .Include(e => e.Job).Include(e => e.Manager).Include(e => e.Department)
+                .AsNoTracking()
                 .ToList();
         }
 
         public static string? GetEmployeeName(int employeeID)
         {
             EmployeeManagementContext context = new EmployeeManagementContext();
-            
+
             return context.Employees.Where(e => e.EmployeeId == employeeID).Select(e => e.FirstName).First();
         }
 
@@ -62,11 +64,30 @@ namespace DataAccessLayer
         {
             EmployeeManagementContext context = new EmployeeManagementContext();
             Employee employee = context.Employees.FirstOrDefault(e => e.EmployeeId == employeeUpdate.EmployeeId);
-            if(employee != null)
+            if (employee != null)
             {
                 employee = employeeUpdate;
                 context.SaveChanges();
             }
+        }
+
+        public static async Task InsertListEmployee(List<Employee> employees)
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+            await context.Employees.AddRangeAsync(employees);
+            await context.SaveChangesAsync();
+        }
+
+        public static void ClearTracking(Employee employee)
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+            context.Entry(employee).State = EntityState.Unchanged;
+        }
+
+        public static int CountTotalEmployee()
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+            return context.Employees.Count();
         }
     }
 }

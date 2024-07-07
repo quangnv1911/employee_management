@@ -1,4 +1,4 @@
-USE [master]
+﻿USE [master]
 GO
 
 /*******************************************************************************
@@ -102,6 +102,17 @@ CREATE TABLE [dbo].[Regions](
 	[RegionName] [varchar](30) NULL
 ) ON [PRIMARY]
 GO
+
+CREATE TABLE [dbo].[AccountMember](
+	[AccountID] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[Password] [varchar](255) NOT NULL,
+	[Email] [varchar](255) NOT NULL,
+	[Role] [varchar](255) NOT NULL,
+	[EmployeeID] [int] FOREIGN KEY REFERENCES [dbo].[Employees] ([EmployeeID]),
+	
+)
+
+Go
 INSERT [dbo].[Countries] ([CountryID], [CountryName], [RegionID]) VALUES (N'AR', N'Argentina', 2)
 INSERT [dbo].[Countries] ([CountryID], [CountryName], [RegionID]) VALUES (N'AU', N'Australia', 3)
 INSERT [dbo].[Countries] ([CountryID], [CountryName], [RegionID]) VALUES (N'BE', N'Belgium', 1)
@@ -302,6 +313,22 @@ INSERT [dbo].[Regions] ([RegionID], [RegionName]) VALUES (2, N'Americas')
 INSERT [dbo].[Regions] ([RegionID], [RegionName]) VALUES (3, N'Asia')
 INSERT [dbo].[Regions] ([RegionID], [RegionName]) VALUES (4, N'Middle East and Africa')
 INSERT [dbo].[Regions] ([RegionID], [RegionName]) VALUES (5, N'Africa')
+GO
+INSERT INTO [dbo].[AccountMember] ([Password],[Email],[Role],[EmployeeID]) VALUES ('123','admin@gmail.com','admin',null)
+
+INSERT INTO [dbo].[AccountMember] ([Password], [Email], [Role], [EmployeeID])
+SELECT 
+    '123',                -- Mật khẩu mặc định, có thể thay đổi tùy ý
+    CONCAT(e.[EmployeeID], '@gmail.com'), -- Tạo Email mặc định dựa trên tên nhân viên, có thể thay đổi tùy ý
+    'employee',                          -- Role mặc định là 'employee'
+    e.[EmployeeID]                       -- EmployeeID từ bảng Employees
+FROM 
+    [dbo].[Employees] e;
+
+GO
+UPDATE [dbo].[AccountMember]
+   SET [Role] = 'manager'
+ WHERE AccountMember.EmployeeID In (SELECT DISTINCT e.ManagerID FROM Employees e where e.ManagerID is not null)
 GO
 ALTER TABLE [dbo].[Countries]  WITH CHECK ADD FOREIGN KEY([RegionID])
 REFERENCES [dbo].[Regions] ([RegionID])

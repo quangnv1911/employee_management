@@ -52,7 +52,7 @@ namespace Group4_WPF
                     {
                         int id;
                         int.TryParse(threadPrincipal.Identity.Name, out id);
-                        lbUserName.Content = "Hello" +employeeService.GetEmployeeName(id);
+                        lbUserName.Content = "Hello " +employeeService.GetEmployeeName(id);
                     }
                     else
                     {

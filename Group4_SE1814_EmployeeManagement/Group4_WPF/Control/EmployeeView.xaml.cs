@@ -54,15 +54,15 @@ namespace Group4_WPF.Control
         private void LoadManager()
         {
             cbManager.ItemsSource = employeeService.GetEmployees();
-            cbManager.DisplayMemberPath = "EmployeeId";
+            cbManager.DisplayMemberPath = "FirstName";
             cbManager.SelectedValuePath = "EmployeeId";
         }
 
         private void LoadJob()
         {
-            cbManager.ItemsSource = jobService.GetJobs();
-            cbManager.DisplayMemberPath = "JobId";
-            cbManager.SelectedValuePath = "JobTitle";
+            cbEmployeeJob.ItemsSource = jobService.GetJobs();
+            cbEmployeeJob.DisplayMemberPath = "JobTitle";
+            cbEmployeeJob.SelectedValuePath = "JobID";
         }
 
         private void LoadEmployeeList()
@@ -123,7 +123,7 @@ namespace Group4_WPF.Control
                         tbSalary.Text = employee.Salary.ToString();
                         tbComiPct.Text = employee.CommissionPct.ToString();
 
-                        cbEmployeeJob.SelectedValue = employee.JobId;
+                        cbEmployeeJob.SelectedValue = employee.Job.JobId;
                         cbManager.SelectedValue = employee.Manager?.EmployeeId;
                         
                         cbManager.IsEnabled = false;
@@ -312,5 +312,7 @@ namespace Group4_WPF.Control
                 MessageBox.Show($"Export fail\n{ex}");
             }
         }
+
+        
     }
 }

@@ -95,7 +95,7 @@
 
             <Label Content="Job" Grid.Row="5" Grid.Column="1"/>
             <TextBox Name="tbSearchJob" Grid.Row="5" Grid.Column="2"/>
-
+ 
             <Button Content="Filter" Name="btnFilter" Grid.Row="6" Grid.Column="1" Click="btnFilter_Click"/>
         </Grid>
 
@@ -157,8 +157,8 @@
             <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="tbComiPct"/>
 
             <Label Grid.Row="3" Grid.Column="0" Name="lbManager" Content="Manager"/>
-            <ComboBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cbManager" />
-
+            <ComboBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cbManager"/>
+            
             <Label Grid.Row="4" Grid.Column="0" Name="lbDepartment" Content="Department"/>
             <ComboBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cbDepartment"/>
 

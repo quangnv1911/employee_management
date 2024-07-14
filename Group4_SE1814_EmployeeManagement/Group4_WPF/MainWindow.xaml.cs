@@ -62,11 +62,9 @@ namespace Group4_WPF
                     {
                         int id;
                         int.TryParse(threadPrincipal.Identity.Name, out id);
-<<<<<<< HEAD
+
                         lbUserName.Content = "Hello " +employeeService.GetEmployeeName(id);
-=======
-                        lbUserName.Content = "Hello" + employeeService.GetEmployeeName(id);
->>>>>>> 64a7197979a8abe89e7796724a09d39915fb00ae
+
                     }
                     else
                     {

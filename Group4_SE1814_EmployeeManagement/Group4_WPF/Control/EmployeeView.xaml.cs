@@ -62,7 +62,7 @@ namespace Group4_WPF.Control
         {
             cbEmployeeJob.ItemsSource = jobService.GetJobs();
             cbEmployeeJob.DisplayMemberPath = "JobTitle";
-            cbEmployeeJob.SelectedValuePath = "JobID";
+            cbEmployeeJob.SelectedValuePath = "JobId";
         }
 
         private void LoadEmployeeList()

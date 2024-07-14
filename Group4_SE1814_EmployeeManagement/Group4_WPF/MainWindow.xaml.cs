@@ -27,15 +27,25 @@ namespace Group4_WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            IPrincipal threadPrincipal = Thread.CurrentPrincipal;
+            //if (threadPrincipal != null)
+            //{
+            //    if (threadPrincipal.Identity.Name != "admin")
+            //    {
+            //        btnDepartmentClick.IsEnabled = false;
+            //        btnJobClick.IsEnabled = false;
+            //    }
+            //}
             employeeService = new EmployeeService();
             ccDisplayContent.Content = new HomeView();
-        } 
+        }
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
             UpdateUserName();
             UpdateLasLogin();
-         
+
         }
         private void UpdateUserName()
         {
@@ -52,7 +62,11 @@ namespace Group4_WPF
                     {
                         int id;
                         int.TryParse(threadPrincipal.Identity.Name, out id);
+<<<<<<< HEAD
                         lbUserName.Content = "Hello " +employeeService.GetEmployeeName(id);
+=======
+                        lbUserName.Content = "Hello" + employeeService.GetEmployeeName(id);
+>>>>>>> 64a7197979a8abe89e7796724a09d39915fb00ae
                     }
                     else
                     {
@@ -102,26 +116,45 @@ namespace Group4_WPF
             this.Close();
         }
 
-        
+
 
         private void btnEmployeeClick_Click(object sender, RoutedEventArgs e)
         {
+
             ccDisplayContent.Content = new EmployeeView();
         }
 
         private void btnJobClick_Click(object sender, RoutedEventArgs e)
         {
-            ccDisplayContent.Content = new JobView();
+            IPrincipal threadPrincipal = Thread.CurrentPrincipal;
+            if (threadPrincipal?.Identity.Name == "admin")
+            {
+                ccDisplayContent.Content = new JobView();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission!!");
+            }
         }
 
         private void btnDepartmentClick_Click(object sender, RoutedEventArgs e)
         {
-            ccDisplayContent.Content = new DepartmentView();
+            IPrincipal threadPrincipal = Thread.CurrentPrincipal;
+            if (threadPrincipal?.Identity.Name == "admin")
+            {
+                ccDisplayContent.Content = new DepartmentView();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission!!");
+            }
         }
 
         private void btnHomeClick_Click(object sender, RoutedEventArgs e)
         {
+
             ccDisplayContent.Content = new HomeView();
+
         }
     }
 }

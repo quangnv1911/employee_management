@@ -21,17 +21,23 @@
         </Grid.ColumnDefinitions>
 
         <!-- DataGrid -->
-        <DataGrid x:Name="dgJobData" Grid.Row="0" Grid.ColumnSpan="3" Margin="10,10,10,10"
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="3">
+            <DataGrid x:Name="dgJobData"  Margin="10,10,10,10"
                   SelectionChanged="dgJobData_SelectionChanged" 
-                  AutoGenerateColumns="False" Padding="20">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding JobId}" Width="200"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding JobTitle}" Width="200"/>
-                <DataGridTextColumn Header="Min Salary" Binding="{Binding MinSalary}" Width="200"/>
-                <DataGridTextColumn Header="Max Salary" Binding="{Binding MaxSalary}" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
+                  AutoGenerateColumns="False" Padding="20" Height="262">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding JobId}" Width="200"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding JobTitle}" Width="200"/>
+                    <DataGridTextColumn Header="Min Salary" Binding="{Binding MinSalary}" Width="200"/>
+                    <DataGridTextColumn Header="Max Salary" Binding="{Binding MaxSalary}" Width="200"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Name="btnPrevious" Content="Previous" Click="btnPrevious_Click" Width="100" Height="30"/>
+                <Label Name="lblPageInfo" Content="Page 1 of 1" VerticalAlignment="Center" Margin="10"/>
+                <Button Name="btnNext" Content="Next" Click="btnNext_Click" Width="100" Height="30"/>
+            </StackPanel>
+        </StackPanel>
         <!-- Grid for Filter -->
 
         <Grid Grid.Row="1" Grid.Column="0" Margin="10,10,10,10">

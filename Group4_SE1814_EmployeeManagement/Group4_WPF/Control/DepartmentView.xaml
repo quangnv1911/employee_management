@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Group4_WPF.Control"
         mc:Ignorable="d"
         d:DesignWidth="1300" d:DesignHeight="684.04"
@@ -21,16 +22,24 @@
         </Grid.ColumnDefinitions>
 
         <!-- DataGrid -->
-        <DataGrid x:Name="dgDepartmentData" Grid.Row="0" Grid.ColumnSpan="3" Margin="10,10,10,10"
-                  SelectionChanged="dgDepartmentData_SelectionChanged" 
-                  AutoGenerateColumns="False" Padding="20">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding DepartmentId}" Width="200"/>
-                <DataGridTextColumn Header="Department Name" Binding="{Binding DepartmentName}" Width="200"/>
-                <DataGridTextColumn Header="Manager Name" Binding="{Binding Manager.FirstName}" Width="200"/>
-                <DataGridTextColumn Header="Location" Binding="{Binding Location.City}" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="3">
+            <DataGrid x:Name="dgDepartmentData"  Margin="10,10,10,10"
+          SelectionChanged="dgDepartmentData_SelectionChanged" 
+          AutoGenerateColumns="False" Height="280">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding DepartmentId}" Width="200"/>
+                    <DataGridTextColumn Header="Department Name" Binding="{Binding DepartmentName}" Width="200"/>
+                    <DataGridTextColumn Header="Manager Name" Binding="{Binding Manager.FirstName}" Width="200"/>
+                    <DataGridTextColumn Header="Location" Binding="{Binding Location.City}" Width="200"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Name="btnPrevious" Content="Previous" Click="btnPrevious_Click" Width="100" Height="30"/>
+                <Label Name="lblPageInfo" Content="Page 1 of 1" VerticalAlignment="Center" Margin="10"/>
+                <Button Name="btnNext" Content="Next" Click="btnNext_Click" Width="100" Height="30"/>
+            </StackPanel>
+        </StackPanel>
+
 
         <!-- Grid for Filter -->
 

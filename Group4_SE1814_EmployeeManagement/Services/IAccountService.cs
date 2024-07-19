@@ -10,5 +10,7 @@ namespace Services
     public interface IAccountService
     {
         AccountMember GetAccountByEmailAndPass(string email, string pass);
+        bool CheckAccountExist(string email);
+        string ChangePass(string email);
     }
 }

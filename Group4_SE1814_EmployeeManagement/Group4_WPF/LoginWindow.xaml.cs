@@ -25,11 +25,44 @@ namespace Group4_WPF
     {
 
         private readonly IAccountService accountService;
-
+        private readonly MailSenderService mailSenderService;
         public LoginWindow()
         {
             InitializeComponent();
             accountService = new AccountService();
+            mailSenderService = new MailSenderService();
+        }
+
+        private void Reset_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    string UserAnswer = Microsoft.VisualBasic.Interaction.InputBox("Enter your email:", "Reset pass", "Your email");
+                    bool checkAccount = accountService.CheckAccountExist(UserAnswer);
+                    if (checkAccount)
+                    {
+                        string newPass = accountService.ChangePass(UserAnswer);
+                        mailSenderService.SendEmail(UserAnswer, newPass);
+
+                        MessageBox.Show("Reset password Success");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The email is invalid");
+                    }
+                }
+            }catch (Exception ex)
+            {
+                //"Reset pass fail"
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
+
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)

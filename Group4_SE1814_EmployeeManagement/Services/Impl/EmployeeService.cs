@@ -205,7 +205,7 @@ namespace Services.Impl
             {
                 return employees;
             }
-            employees = employees.Where(e => e.Manager.EmployeeId == int.Parse(role)).ToList();
+            employees = employees.Where(e => e.Manager?.EmployeeId == int.Parse(role)).ToList();
             return employees;
         }
 

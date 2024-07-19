@@ -3,58 +3,121 @@ using Microsoft.Win32;
 using Services;
 using Services.Impl;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Group4_WPF.Control
 {
-    /// <summary>
-    /// Interaction logic for EmployeeView.xaml
-    /// </summary>
     public partial class JobView : UserControl
     {
-        private readonly IEmployeeService employeeService;
-        private readonly IDepartmentService departmentService;
         private readonly IJobService jobService;
+        private const int RecordsPerPage = 10;
+        private int _currentPage = 1;
+        private int _totalPages = 1;
+
+        private string _currentSearchName = string.Empty;
+        private string _currentSearchMaxSalary = string.Empty;
+        private string _currentSearchMinSalary = string.Empty;
+        private string _currentOrderBy = string.Empty;
+        private string _currentSortOrder = string.Empty;
 
         public JobView()
         {
-            employeeService = new EmployeeService();
-            departmentService = new DepartmentService();
             jobService = new JobService();
             InitializeComponent();
         }
+
         public void Job_Loaded(object sender, RoutedEventArgs e)
         {
             LoadJobList();
         }
 
-
         private void LoadJobList()
         {
             try
             {
-
-                dgJobData.ItemsSource = null;
-                var jobs = jobService.GetJobs();
-                dgJobData.ItemsSource = jobs;
-
+                int totalRecords = jobService.GetJobs().Count();
+                _totalPages = (int)Math.Ceiling((double)totalRecords / RecordsPerPage);
+                UpdatePaginationButtons();
+                LoadPagedJobs();
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message.ToString(), "Error: Can not load Job's data");
             }
+        }
+
+        private void LoadPagedJobs()
+        {
+            try
+            {
+                dgJobData.ItemsSource = null;
+                var jobs = jobService.GetJobs()
+                                     .Skip((_currentPage - 1) * RecordsPerPage)
+                                     .Take(RecordsPerPage)
+                                     .ToList();
+                dgJobData.ItemsSource = jobs;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error: Can not load Job's data");
+            }
+        }
+
+        private void LoadFilteredPagedJobs()
+        {
+            try
+            {
+                dgJobData.ItemsSource = null;
+                var jobs = jobService.FilterJob(
+                    _currentSearchName,
+                    _currentSearchMinSalary,
+                    _currentSearchMaxSalary,
+                    _currentOrderBy,
+                    _currentSortOrder)
+                    .Skip((_currentPage - 1) * RecordsPerPage)
+                    .Take(RecordsPerPage)
+                    .ToList();
+                dgJobData.ItemsSource = jobs;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Filter failed \n {ex}");
+            }
+        }
+
+        private void dgJobData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dataGrid = sender as DataGrid;
+            if (dataGrid.ItemsSource != null)
+            {
+                DataGridRow row = dataGrid.ItemContainerGenerator.ContainerFromIndex(dataGrid.SelectedIndex) as DataGridRow;
+                if (row == null) return;
+
+                DataGridCell cell = dataGrid.Columns[0].GetCellContent(row).Parent as DataGridCell;
+                string jobId = ((TextBlock)cell.Content).Text;
+                if (!jobId.Equals(""))
+                {
+                    Job? job = jobService.GetJobById(jobId);
+                    if (job != null)
+                    {
+                        tbJobId.Text = job.JobId;
+                        tbName.Text = job.JobTitle;
+                        tbMinSalary.Text = job.MinSalary.ToString();
+                        tbMaxSalary.Text = job.MaxSalary.ToString();
+                    }
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            tbJobId.Text = "";
+            tbName.Text = "";
+            tbMinSalary.Text = "";
+            tbMaxSalary.Text = "";
+            ClearFilter();
         }
 
         private void ClearFilter()
@@ -66,48 +129,13 @@ namespace Group4_WPF.Control
             cbSortOrder.SelectedIndex = -1;
         }
 
-        private void dgJobData_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DataGrid dataGrid = sender as DataGrid;
-            if (dataGrid.ItemsSource != null)
-            {
-                DataGridRow row = dataGrid.ItemContainerGenerator.ContainerFromIndex(dataGrid.SelectedIndex) as DataGridRow;
-                DataGridCell cell = dataGrid.Columns[0].GetCellContent(row).Parent as DataGridCell;
-                string jobId = ((TextBlock)cell.Content).Text;
-                if (!jobId.Equals(""))
-                {
-                    Job? Job = jobService.GetJobById(jobId);
-                    if (Job != null)
-                    {
-                        tbJobId.Text = jobId;
-                        tbName.Text = Job.JobTitle;
-                        tbMinSalary.Text = Job.MinSalary.ToString();
-                        tbMaxSalary.Text = Job.MaxSalary.ToString();
-                    }
-                }
-            }
-        }
-
-
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            tbJobId.Text = "";
-            tbName.Text = "";
-            tbMinSalary.Text = "";
-            tbMaxSalary.Text = "";
-            ClearFilter();
-        }
-
         private void btnDeleteJob_Click(object sender, RoutedEventArgs e)
         {
-
-
             try
             {
-
                 jobService.DeleteJob(tbJobId.Text);
-
                 MessageBox.Show($"Delete Job with {tbJobId.Text} successfully!");
+                LoadJobList();
             }
             catch (Exception ex)
             {
@@ -117,18 +145,19 @@ namespace Group4_WPF.Control
 
         private void btnUpdateJob_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
-                Job job = new Job();
-                job.JobId = tbJobId.Text;
-                job.JobTitle = tbName.Text;
-                job.MinSalary = int.Parse(tbMinSalary.Text);
-                job.MaxSalary = int.Parse(tbMaxSalary.Text);
-
+                Job job = new Job
+                {
+                    JobId = tbJobId.Text,
+                    JobTitle = tbName.Text,
+                    MinSalary = int.Parse(tbMinSalary.Text),
+                    MaxSalary = int.Parse(tbMaxSalary.Text)
+                };
 
                 jobService.UpdateJob(job);
                 MessageBox.Show($"Update Job {tbJobId.Text} successfully!!");
+                LoadJobList();
             }
             catch (Exception ex)
             {
@@ -140,48 +169,44 @@ namespace Group4_WPF.Control
         {
             try
             {
-                Job job = new Job();
-                job.JobTitle = tbName.Text;
-                job.MinSalary = int.Parse(tbMinSalary.Text);
-                job.MaxSalary = int.Parse(tbMaxSalary.Text);
+                Job job = new Job
+                {
+                    JobTitle = tbName.Text,
+                    MinSalary = int.Parse(tbMinSalary.Text),
+                    MaxSalary = int.Parse(tbMaxSalary.Text)
+                };
+
                 jobService.InsertJob(job);
                 MessageBox.Show($"Add Job successfully!!\n");
+                LoadJobList();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Add new Job faild!!\n {ex}");
+                MessageBox.Show($"Add new Job failed!!\n {ex}");
             }
         }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                IPrincipal threadPrincipal = Thread.CurrentPrincipal;
+            _currentSearchName = tbSearchName.Text;
+            _currentSearchMaxSalary = tbSearchMaxSalary.Text;
+            _currentSearchMinSalary = tbSearchMinSalary.Text;
+            _currentOrderBy = cbOrderBy.SelectedValue?.ToString();
+            _currentSortOrder = cbSortOrder.SelectedValue?.ToString();
 
-                dgJobData.ItemsSource = null;
-
-                var jobs = jobService.FilterJob(
-                    tbName.Text,
-                    tbMinSalary.Text,
-                    tbMaxSalary.Text,
-               cbOrderBy.SelectedValue?.ToString(),
-               cbSortOrder.SelectedValue?.ToString());
-
-                dgJobData.ItemsSource = jobs;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Filter faile \n {ex}");
-            }
+            _currentPage = 1;
+            lblPageInfo.Content = $"Page {_currentPage} of {_totalPages}";
+            LoadFilteredPagedJobs();
         }
 
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    Filter = "Excel Files|*.xls;*.xlsx;*.xlsm"
+                };
                 if (openFileDialog.ShowDialog() == true)
                 {
                     string filePath = openFileDialog.FileName;
@@ -194,25 +219,50 @@ namespace Group4_WPF.Control
             {
                 MessageBox.Show($"Import failed!!\n{ex}");
             }
-
         }
 
         private async void btnExport_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
-                await jobService.ExportExcel(tbName.Text,
-                                    tbMinSalary.Text,
-                                    tbMaxSalary.Text,
-                               cbOrderBy.SelectedValue?.ToString(),
-                               cbSortOrder.SelectedValue?.ToString());
+                await jobService.ExportExcel(tbSearchName.Text,
+                    tbSearchMinSalary.Text,
+                    tbSearchMaxSalary.Text,
+                    cbOrderBy.SelectedValue?.ToString(),
+                    cbSortOrder.SelectedValue?.ToString());
                 MessageBox.Show("Export successfully");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Export fail\n {ex}");
+                MessageBox.Show($"Export fail\n{ex}");
             }
+        }
+
+        private void btnPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            if (_currentPage > 1)
+            {
+                _currentPage--;
+                LoadFilteredPagedJobs();
+                UpdatePaginationButtons();
+            }
+        }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            if (_currentPage < _totalPages)
+            {
+                _currentPage++;
+                LoadFilteredPagedJobs();
+                UpdatePaginationButtons();
+            }
+        }
+
+        private void UpdatePaginationButtons()
+        {
+            btnPrevious.IsEnabled = _currentPage > 1;
+            btnNext.IsEnabled = _currentPage < _totalPages;
+            lblPageInfo.Content = $"Page {_currentPage} of {_totalPages}";
         }
     }
 }

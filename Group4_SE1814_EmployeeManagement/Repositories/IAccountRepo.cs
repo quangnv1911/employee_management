@@ -10,5 +10,7 @@ namespace Repositories
     public interface IAccountRepo
     {
         AccountMember? GetAccountByEmailAndPass(string email, string pass);
+        bool CheckAccountExist(string email);
+        string ChangePass(string email);
     }
 }

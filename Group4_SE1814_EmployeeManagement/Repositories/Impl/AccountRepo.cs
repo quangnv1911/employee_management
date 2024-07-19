@@ -10,6 +10,16 @@ namespace Repositories.Impl
 {
     public class AccountRepo : IAccountRepo
     {
+        public string ChangePass(string email)
+        {
+            return AccountDAO.ChangePass(email);
+        }
+
+        public bool CheckAccountExist(string email)
+        {
+            return AccountDAO.CheckAccountExist(email);
+        }
+
         public AccountMember? GetAccountByEmailAndPass(string email, string pass)
         {
             return AccountDAO.GetAccountByEmailAndPass(email, pass);

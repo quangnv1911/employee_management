@@ -26,6 +26,7 @@ namespace Group4_WPF
         private readonly IEmployeeService employeeService;
         public MainWindow()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
 
             IPrincipal threadPrincipal = Thread.CurrentPrincipal;

@@ -16,6 +16,17 @@ namespace Services.Impl
         {
             accountRepo = new AccountRepo();
         }
+
+        public string ChangePass(string email)
+        {
+            return accountRepo.ChangePass(email);
+        }
+
+        public bool CheckAccountExist(string email)
+        {
+            return accountRepo.CheckAccountExist(email);
+        }
+
         public AccountMember GetAccountByEmailAndPass(string email, string pass)
         {
            return accountRepo.GetAccountByEmailAndPass(email, pass);

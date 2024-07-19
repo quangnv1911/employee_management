@@ -59,10 +59,10 @@ namespace Services.Impl
                         break;
 
                     case "Manager Name":
-                        departments = sortOrder == "Ascending" ? departments.OrderBy(c => c.Manager.FirstName).ToList() : departments.OrderByDescending(c => c.Manager.FirstName).ToList();
+                        departments = sortOrder == "Ascending" ? departments.OrderBy(c => c.Manager?.FirstName).ToList() : departments.OrderByDescending(c => c.Manager?.FirstName).ToList();
                         break;
                     case "Location(City)":
-                        departments = sortOrder == "Ascending" ? departments.OrderBy(c => c.Location.City).ToList() : departments.OrderByDescending(c => c.Location.City).ToList();
+                        departments = sortOrder == "Ascending" ? departments.OrderBy(c => c.Location?.City).ToList() : departments.OrderByDescending(c => c.Location?.City).ToList();
                         break;
                     default:
                         break;

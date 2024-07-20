@@ -46,7 +46,6 @@ namespace Group4_WPF
         {
             UpdateUserName();
             UpdateLasLogin();
-
         }
         private void UpdateUserName()
         {
@@ -148,12 +147,16 @@ namespace Group4_WPF
                 MessageBox.Show("You do not have permission!!");
             }
         }
-
         private void btnHomeClick_Click(object sender, RoutedEventArgs e)
         {
 
             ccDisplayContent.Content = new HomeView();
 
+        }
+
+        private void btnProfileClick_Click(object sender, RoutedEventArgs e)
+        {
+            ccDisplayContent.Content = new Profile();
         }
     }
 }

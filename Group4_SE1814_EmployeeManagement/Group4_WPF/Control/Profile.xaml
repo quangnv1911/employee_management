@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Group4_WPF.Control.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group4_WPF.Control"
+        mc:Ignorable="d"
+        Background="White" Width="1300" Height="684.04" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!-- Top Row for spacing -->
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <!-- Bottom Row for remaining space -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <!-- First Square Column -->
+            <ColumnDefinition Width="1*"/>
+            <!-- Second Square Column -->
+        </Grid.ColumnDefinitions>
+
+        <!-- First Square -->
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Full Name" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtName"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Second Square -->
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Phone" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtPhone"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Third Square -->
+        <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Email" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtEmail"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Employee ID" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtEmployeeID"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Job" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtJob"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtSalary"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Department" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtDepartment"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Role" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtRole"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

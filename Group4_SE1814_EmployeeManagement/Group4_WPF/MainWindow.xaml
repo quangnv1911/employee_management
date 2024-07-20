@@ -85,6 +85,9 @@ Foreground="White" Height="52" Click="btnJobClick_Click"/>
                 <Button Content="Department" x:Name="btnDepartmentClick"
                         BorderBrush="{x:Null}" Background="{x:Null}"
                         Foreground="White" Height="58" Click="btnDepartmentClick_Click"/>
+                <Button Content="Profile" x:Name="btnProfileClick"
+        BorderBrush="{x:Null}" Background="{x:Null}"
+        Foreground="White" Height="58" Click="btnProfileClick_Click"/>
             </StackPanel>
 
             <!-- Nút Logout và label "Last Login" -->

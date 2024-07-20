@@ -13,6 +13,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <!-- Bottom Row for remaining space -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -75,6 +76,18 @@
             <StackPanel>
                 <TextBlock Text="Role" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
                 <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtRole"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Hire Date" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtHireDate"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Management Name" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Name="txtManagementName"/>
             </StackPanel>
         </Border>
     </Grid>

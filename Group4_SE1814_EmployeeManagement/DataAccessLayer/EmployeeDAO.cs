@@ -31,6 +31,48 @@ namespace DataAccessLayer
                 .ToList();
         }
 
+        public static List<Employee> GetEmployeeMaxSalary(DateOnly? from, DateOnly? to)
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+
+            var listEmployee = context.Employees.Include(d => d.Department).ToList();
+            if(from != null)
+            {
+                listEmployee = listEmployee.Where(d => d.HireDate >= from).ToList();
+            }
+            if(to != null)
+            {
+                listEmployee = listEmployee.Where(d => d.HireDate <= to).ToList();  
+            }
+            return listEmployee
+                .OrderByDescending(d => d.Salary).Take(5).ToList();
+        }
+
+        public static Employee? GetEmployeHighestSalary(DateOnly? from, DateOnly? to)
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+
+            var listEmployee = context.Employees.Include(d => d.Department).ToList();
+            if (from != null)
+            {
+                listEmployee = listEmployee.Where(d => d.HireDate >= from).ToList();
+            }
+            if (to != null)
+            {
+                listEmployee = listEmployee.Where(d => d.HireDate <= to).ToList();
+            }
+            return listEmployee
+                .OrderByDescending(d => d.Salary).FirstOrDefault();
+        }
+
+        public static List<Employee> GetEmployeeMaxSalary()
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+
+            return context.Employees.Include(d => d.Department)
+                .OrderByDescending(d => d.Salary).Take(5).ToList();
+        }
+
         public static string? GetEmployeeName(int employeeID)
         {
             EmployeeManagementContext context = new EmployeeManagementContext();

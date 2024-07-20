@@ -76,7 +76,8 @@ namespace Group4_WPF.Control
                         bool isManager = employeeService.GetEmployees().Any(e => e.ManagerId == id);
                         txtRole.Text = isManager ? "Manager" : "Employee";
                         txtDepartment.Text = d.DepartmentName;
-
+                        txtManagementName.Text = $"{e.Manager?.FirstName}  {e.Manager?.LastName}";
+                        txtHireDate.Text = e.HireDate.ToString();
                     }
                     else
                     {

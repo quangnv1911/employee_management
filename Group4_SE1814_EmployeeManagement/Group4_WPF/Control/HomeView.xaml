@@ -8,7 +8,7 @@
         Background="White" Width="1300" Height="684.04" Loaded="Home_Loaded">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100"/>
             <!-- Top Row for spacing -->
             <RowDefinition Height="Auto"/>
             <!-- Row for the squares -->
@@ -21,8 +21,21 @@
             <ColumnDefinition Width="1*"/>
             <!-- Second Square Column -->
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
             <!-- Third Square Column -->
         </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Label>Select From:</Label>
+            <DatePicker x:Name="dpFrom"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <Label>Select To:</Label>
+            <DatePicker x:Name="dpTo" />
+        </StackPanel>
+
+        <Button Grid.Row="0" Grid.Column="3" Content="Filter" Margin="41,25,198,50" Click="Button_Click"/>
 
         <!-- First Square -->
         <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
@@ -45,6 +58,28 @@
             <StackPanel>
                 <TextBlock Text="Total Jobs" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
                 <TextBlock Text="150" FontSize="24" HorizontalAlignment="Center" Name="tbJob"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Employee highest salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="150" FontSize="24" HorizontalAlignment="Center" Name="tbBestEmployee"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="5 Employee higher salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="Nhân viên 1&#x0a;Nhân viên 2" FontSize="24" HorizontalAlignment="Center" Name="tbListBestEmployee" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="5 Job higher salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="Việc làm 1&#x0a;Việc làm 2" FontSize="24" HorizontalAlignment="Center" Name="tbListBestJob" TextWrapping="Wrap" >
+                   
+                </TextBlock>
             </StackPanel>
         </Border>
     </Grid>

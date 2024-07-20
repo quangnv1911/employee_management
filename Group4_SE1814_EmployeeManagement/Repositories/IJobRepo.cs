@@ -22,5 +22,7 @@ namespace Repositories
         void ClearTracking(Job job);
 
         int CountTotalJob();
+
+        List<Job> GetJobMaxMony();
     }
 }

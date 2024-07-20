@@ -125,6 +125,11 @@ namespace Services.Impl
             return jobRepo.GetJobById(id);
         }
 
+        public List<Job> GetJobMaxMony()
+        {
+            return jobRepo.GetJobMaxMony();
+        }
+
         public List<Job> GetJobs()
         {
             return jobRepo.GetJobs();

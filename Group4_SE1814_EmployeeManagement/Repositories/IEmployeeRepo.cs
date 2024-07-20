@@ -21,5 +21,6 @@ namespace Repositories
         void InsertListEmployee(List<Employee> employees);
         void ClearTracking(Employee employee);
         int CountTotalEmployee();
+        List<Employee> GetEmployeeMaxSalary(DateOnly? from, DateOnly? to);
     }
 }

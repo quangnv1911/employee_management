@@ -22,5 +22,6 @@ namespace Services
         void InsertListEmployee(List<Employee> employees);
         void ImportExcelFile(string filePath);
         int CountTotalEmployee();
+        List<Employee> GetEmployeeMaxSalary(DateOnly? from, DateOnly? to);
     }
 }

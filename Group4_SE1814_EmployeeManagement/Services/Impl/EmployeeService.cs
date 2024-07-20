@@ -86,8 +86,8 @@ namespace Services.Impl
                     workSheet.Cells[recordIndex, 5].Value = employee.Phone;
                     workSheet.Cells[recordIndex, 6].Value = employee.HireDate?.ToString("yyyy-MM-dd");
 
-                    workSheet.Cells[recordIndex, 7].Value = employee.Job.JobId;
-                    workSheet.Cells[recordIndex, 8].Value = employee.Job.JobTitle;
+                    workSheet.Cells[recordIndex, 7].Value = employee.Job?.JobId;
+                    workSheet.Cells[recordIndex, 8].Value = employee.Job?.JobTitle;
                     workSheet.Cells[recordIndex, 9].Value = employee.Salary;
                     workSheet.Cells[recordIndex, 10].Value = employee.CommissionPct;
                     workSheet.Cells[recordIndex, 11].Value = employee.Manager?.EmployeeId;
@@ -213,6 +213,13 @@ namespace Services.Impl
         {
             return employeeRepo.GetEmployeeById(id);
         }
+
+        public List<Employee> GetEmployeeMaxSalary(DateOnly? from, DateOnly? to)
+        {
+            return employeeRepo.GetEmployeeMaxSalary(from, to);
+        }
+
+   
 
         public string? GetEmployeeName(int id)
         {

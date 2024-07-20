@@ -24,5 +24,7 @@ namespace Services
         void ImportExcelFile(string filePath);
         void InsertListJob(List<Job> jobs);
         int CountTotalJob();
+
+        List<Job> GetJobMaxMony();
     }
 }

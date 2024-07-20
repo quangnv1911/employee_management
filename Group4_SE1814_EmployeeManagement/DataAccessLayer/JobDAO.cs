@@ -22,6 +22,11 @@ namespace DataAccessLayer
             context.Jobs.Add(job);
             context.SaveChanges();
         }
+        public static List<Job> GetJobMaxMoney()
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+            return context.Jobs.OrderByDescending(e => e.MinSalary).Take(5).ToList();
+        }
 
         public static void UpdateJob(Job job)
         {

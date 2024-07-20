@@ -30,6 +30,11 @@ namespace Repositories.Impl
             return JobDAO.GetJobById(id);
         }
 
+        public List<Job> GetJobMaxMony()
+        {
+            return JobDAO.GetJobMaxMoney();
+        }
+
         public List<Job> GetJobs()
         {
             return JobDAO.GetJobs();

@@ -77,15 +77,15 @@ Foreground="White" Padding="20 0 20 0" Height="74" Cursor="Hand" Click="btnHomeC
                     </Button.Style>
                 </Button>
                 <Button Content="Employee" x:Name="btnEmployeeClick"
-                        BorderBrush="{x:Null}" Background="{x:Null}"
+                        BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" 
 Foreground="White" Click="btnEmployeeClick_Click" Height="67"/>
                 <Button Content="Job" x:Name="btnJobClick"
                         BorderBrush="{x:Null}" Background="{x:Null}"
 Foreground="White" Height="52" Click="btnJobClick_Click"/>
-                <Button Content="Department" x:Name="btnDepartmentClick"
+                <Button Content="Department" x:Name="btnDepartmentClick" Cursor="Hand" 
                         BorderBrush="{x:Null}" Background="{x:Null}"
                         Foreground="White" Height="58" Click="btnDepartmentClick_Click"/>
-                <Button Content="Profile" x:Name="btnProfileClick"
+                <Button Content="Profile" x:Name="btnProfileClick" Cursor="Hand" 
         BorderBrush="{x:Null}" Background="{x:Null}"
         Foreground="White" Height="58" Click="btnProfileClick_Click"/>
             </StackPanel>

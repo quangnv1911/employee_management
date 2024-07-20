@@ -38,6 +38,19 @@ namespace Group4_WPF.Control
             departmentService = new DepartmentService();
             jobService = new JobService();
             InitializeComponent();
+
+            IPrincipal threadPrincipal = Thread.CurrentPrincipal;
+            if (threadPrincipal != null)
+            {
+                if (threadPrincipal.Identity.Name != "admin")
+                {
+                    btnAddEmployee.IsEnabled = false;
+                    btnUpdateEmployee.IsEnabled = false;
+                    btnUpdateEmployee.IsEnabled = false;
+                    btnImportFile.IsEnabled = false;
+                    btnExportFile.IsEnabled = false;
+                }
+            }
         }
 
         public void Employee_Loaded(object sender, RoutedEventArgs e)

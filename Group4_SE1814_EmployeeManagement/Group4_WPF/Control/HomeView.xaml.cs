@@ -61,7 +61,7 @@ namespace Group4_WPF.Control
             }
             tbListBestEmployee.Text = listEmployeeLuxury;
 
-            tbBestEmployee.Text = $"{listEmployee.FirstOrDefault()?.EmployeeId?.ToString()} - {listEmployee.FirstOrDefault()?.FirstName?.ToString()}";
+            tbBestEmployee.Text = $"{listEmployee.FirstOrDefault()?.EmployeeId.ToString()} - {listEmployee.FirstOrDefault()?.FirstName?.ToString()}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -93,7 +93,7 @@ namespace Group4_WPF.Control
             }
             tbListBestEmployee.Text = listEmployeeLuxury;
 
-            tbBestEmployee.Text = $"{listEmployee.FirstOrDefault()?.EmployeeId?.ToString()} - {listEmployee.FirstOrDefault()?.FirstName?.ToString()}";
+            tbBestEmployee.Text = $"{listEmployee.FirstOrDefault()?.EmployeeId.ToString()} - {listEmployee.FirstOrDefault()?.FirstName?.ToString()}";
         }
     }
 }

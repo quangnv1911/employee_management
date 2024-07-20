@@ -67,5 +67,9 @@ namespace Repositories.Impl
             return EmployeeDAO.GetEmployeeMaxSalary(from, to);
         }
 
+        public int CountNewEmployee(DateOnly? from, DateOnly? to)
+        {
+            return EmployeeDAO.CountNewEmployee(from, to);
+        }
     }
 }

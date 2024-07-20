@@ -24,7 +24,7 @@
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="3">
             <DataGrid x:Name="dgEmployeeData" Margin="10,10,10,10"
                   SelectionChanged="dgEmployeeData_SelectionChanged" 
-                  AutoGenerateColumns="False" Padding="20" Height="275">
+                  AutoGenerateColumns="False"  Height="275">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding EmployeeId}" Width="50"/>
                     <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" Width="100"/>
@@ -154,7 +154,7 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" Grid.Column="0" Content="EmployeeID" Name="lbEmployeeID"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Name="tbEmployeeID"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="tbEmployeeID" />
 
             <Label Grid.Row="1" Grid.Column="0" Name="lbSalary" Content="Salary"/>
             <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbSalary"/>

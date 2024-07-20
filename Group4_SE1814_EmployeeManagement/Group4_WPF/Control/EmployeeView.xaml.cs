@@ -221,6 +221,11 @@ namespace Group4_WPF.Control
         {
             try
             {
+                if (dpEmployeeHire.SelectedDate == null || dpEmployeeHire.SelectedDate > DateTime.Now)
+                {
+                    MessageBox.Show("Invalid date");
+                    return;
+                }
                 Employee employee = CreateEmployeeFromInput();
                 employeeService.UpdateEmployee(employee);
                 MessageBox.Show($"Update employee {tbEmployeeID.Text} successfully!!");
@@ -236,6 +241,12 @@ namespace Group4_WPF.Control
         {
             try
             {
+                if(dpEmployeeHire.SelectedDate == null || dpEmployeeHire.SelectedDate > DateTime.Now)
+                {
+                    MessageBox.Show("Invalid date");
+                    return;
+                }
+
                 Employee employee = CreateEmployeeFromInput();
                 employeeService.InsertEmployee(employee);
                 MessageBox.Show($"Add new employee successfully!!");

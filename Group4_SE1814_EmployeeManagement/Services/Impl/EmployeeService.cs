@@ -26,6 +26,11 @@ namespace Services.Impl
             departmentRepo = new DepartmentRepo();
         }
 
+        public int CountNewEmployee(DateOnly? from, DateOnly? to)
+        {
+            return employeeRepo.CountNewEmployee(from, to);
+        }
+
         public int CountTotalEmployee()
         {
             return employeeRepo.CountTotalEmployee();

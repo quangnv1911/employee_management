@@ -62,21 +62,21 @@
         </Border>
         <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
             <StackPanel>
-                <TextBlock Text="Employee highest salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="New employee" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
                 <TextBlock Text="150" FontSize="24" HorizontalAlignment="Center" Name="tbBestEmployee"/>
             </StackPanel>
         </Border>
 
         <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
             <StackPanel>
-                <TextBlock Text="5 Employee higher salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="5 Employee highest salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
                 <TextBlock Text="Nhân viên 1&#x0a;Nhân viên 2" FontSize="24" HorizontalAlignment="Center" Name="tbListBestEmployee" TextWrapping="Wrap"/>
             </StackPanel>
         </Border>
 
         <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
             <StackPanel>
-                <TextBlock Text="5 Job higher salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                <TextBlock Text="5 Job highest salary" FontWeight="Bold" Margin="0,0,0,5" HorizontalAlignment="Center"/>
                 <TextBlock Text="Việc làm 1&#x0a;Việc làm 2" FontSize="24" HorizontalAlignment="Center" Name="tbListBestJob" TextWrapping="Wrap" >
                    
                 </TextBlock>

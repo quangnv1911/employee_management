@@ -21,6 +21,22 @@ namespace DataAccessLayer
                  .ToList();
         }
 
+        public static int CountNewEmployee(DateOnly? from, DateOnly? to)
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+
+            var listEmployee = context.Employees.Include(d => d.Department).ToList();
+            if (from != null)
+            {
+                listEmployee = listEmployee.Where(d => d.HireDate >= from).ToList();
+            }
+            if (to != null)
+            {
+                listEmployee = listEmployee.Where(d => d.HireDate <= to).ToList();
+            }
+            return listEmployee.Count;
+        }
+
         public static List<Employee> GetEmployees()
         {
             EmployeeManagementContext context = new EmployeeManagementContext();

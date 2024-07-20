@@ -60,8 +60,9 @@ namespace Group4_WPF.Control
                 listEmployeeLuxury += $"{item.FirstName?.ToString()}-${item.Salary}-{item.Department?.DepartmentName}\n";
             }
             tbListBestEmployee.Text = listEmployeeLuxury;
+            int count = employeeService.CountNewEmployee(fromDate, toDate);
 
-            tbBestEmployee.Text = $"{listEmployee.FirstOrDefault()?.EmployeeId.ToString()} - {listEmployee.FirstOrDefault()?.FirstName?.ToString()}";
+            tbBestEmployee.Text = $"{count}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -93,7 +94,9 @@ namespace Group4_WPF.Control
             }
             tbListBestEmployee.Text = listEmployeeLuxury;
 
-            tbBestEmployee.Text = $"{listEmployee.FirstOrDefault()?.EmployeeId.ToString()} - {listEmployee.FirstOrDefault()?.FirstName?.ToString()}";
+            int count = employeeService.CountNewEmployee(fromDate, toDate);
+
+            tbBestEmployee.Text = $"{count}";
         }
     }
 }

@@ -24,7 +24,7 @@
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="3">
             <DataGrid x:Name="dgJobData"  Margin="10,10,10,10"
                   SelectionChanged="dgJobData_SelectionChanged" 
-                  AutoGenerateColumns="False" Padding="20" Height="262">
+                  AutoGenerateColumns="False"  Height="262">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding JobId}" Width="200"/>
                     <DataGridTextColumn Header="Name" Binding="{Binding JobTitle}" Width="200"/>
@@ -100,7 +100,7 @@
             <Label Content="Job Information" FontSize="16" FontWeight="Bold"/>
 
             <Label Grid.Row="1" Grid.Column="0" Name="lbJobId" Content="Job ID"/>
-            <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbJobId"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbJobId" />
             
             <Label Grid.Row="2" Grid.Column="0" Name="lbTitle" Content="Job Name"/>
             <TextBox Grid.Row="2" Grid.Column="1" x:Name="tbName"/>

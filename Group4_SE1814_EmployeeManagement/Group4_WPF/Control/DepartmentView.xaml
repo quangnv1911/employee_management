@@ -103,7 +103,7 @@
 
 
             <Label Grid.Row="1" Grid.Column="0" Name="lbDepartmetnID" Content="Department ID"/>
-            <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbDepartmetnID" />
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbDepartmetnID"  />
 
             <Label Grid.Row="2" Grid.Column="0" Name="lbDepartmentName" Content="Department Name"/>
             <TextBox Grid.Row="2" Grid.Column="1" x:Name="tbDepartmentName"/>

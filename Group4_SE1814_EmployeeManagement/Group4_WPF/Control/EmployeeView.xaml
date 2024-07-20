@@ -182,6 +182,8 @@
                 <ColumnDefinition Width="19.508"/>
                 <ColumnDefinition Width="110.492"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Content="ADD" Margin="5,17,5,17" Name="btnAddEmployee" Click="btnAddEmployee_Click" Width="100" Height="30"/>
             <Button Grid.Column="1" Content="UPDATE" Margin="0,17,0,17" Name="btnUpdateEmployee" Click="btnUpdateEmployee_Click" HorizontalAlignment="Center" Width="100" Height="30"/>
@@ -189,6 +191,8 @@
             <Button Grid.Column="3" Content="CLEAR" Margin="5,17,5,17" Name="btnClear" Click="btnClear_Click" Width="100" Height="30" />
             <Button Grid.Column="4" Content="IMPORT FROM FILE" Margin="5,17,5,17" Name="btnImportFile" Click="btnImport_Click" Width="120" Height="30" Grid.ColumnSpan="2" />
             <Button Grid.Column="6" Content="EXPORT TO EXCEL" Margin="5,17,5,17" Name="btnExportFile" Click="btnExport_Click" Width="120" Height="30" />
+            <Label  Grid.Column="7" Content="Quantity:" Margin="5,17,5,17" Width="Auto" Height="30" FontSize="16" />
+            <TextBox Grid.Column="8" x:Name="txtQuantity" Margin="5,17,5,17" Width="50" Height="30" FontSize="18" IsReadOnly="True"/>
 
         </Grid>
     </Grid>

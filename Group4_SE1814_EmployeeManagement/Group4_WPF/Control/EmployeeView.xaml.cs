@@ -83,6 +83,7 @@ namespace Group4_WPF.Control
                 dgEmployeeData.ItemsSource = null;
 
                 List<Employee> employees = GetFilteredEmployees(threadPrincipal);
+                txtQuantity.Text = employees.Count.ToString();
                 _totalPages = (int)Math.Ceiling((double)employees.Count / RecordsPerPage);
                 UpdatePaginationButtons();
                 lblPageInfo.Content = $"Page {_currentPage} of {_totalPages}";

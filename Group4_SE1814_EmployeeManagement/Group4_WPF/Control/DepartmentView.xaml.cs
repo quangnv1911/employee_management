@@ -52,6 +52,7 @@ namespace Group4_WPF.Control
             try
             {
                 int totalRecords = departmentService.GetDepartments().Count();
+                txtQuantity.Text = totalRecords.ToString();
                 _totalPages = (int)Math.Ceiling((double)totalRecords / RecordsPerPage);
                 UpdatePaginationButtons();
 
